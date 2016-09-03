@@ -18,6 +18,7 @@ class ClientTestCase(BaseStarWarsAPITestCase):
         self.assertEqual(luke['eye_color'], 'blue')
         self.assertEqual(luke['birth_year'], '19BBY')
         self.assertEqual(luke['gender'], 'male')
+    
 
     @responses.activate
     def test_api_client_get_people(self):

@@ -10,6 +10,7 @@ class PeopleTestCase(BaseStarWarsAPITestCase):
     @responses.activate
     def test_people_model(self):
         luke = People.get(1)
+        self.assertFalse(hasattr(People, 'name'))
         self.assertEqual(luke.name, 'Luke Skywalker')
         self.assertEqual(luke.name, 'Luke Skywalker')
         self.assertEqual(luke.height, '172')
