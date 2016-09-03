@@ -9,7 +9,9 @@ class PeopleTestCase(BaseStarWarsAPITestCase):
 
     @responses.activate
     def test_people_model(self):
+        
         luke = People.get(1)
+        
         self.assertFalse(hasattr(People, 'name'))
         self.assertEqual(luke.name, 'Luke Skywalker')
         self.assertEqual(luke.name, 'Luke Skywalker')
@@ -20,6 +22,8 @@ class PeopleTestCase(BaseStarWarsAPITestCase):
         self.assertEqual(luke.eye_color, 'blue')
         self.assertEqual(luke.birth_year, '19BBY')
         self.assertEqual(luke.gender, 'male')
+        
+    
 
     @responses.activate
     def test_people_model_not_found(self):
